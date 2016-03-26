@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>fractal.fsh</file>
+        <file>fractal.vsh</file>
+    </qresource>
+</RCC>

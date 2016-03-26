@@ -11,3 +11,6 @@ SOURCES += \
 OTHER_FILES += fractal.vsh \
     fractal.fsh
 RESOURCES += Fractal.qrc
+
+DISTFILES += \
+    README.md

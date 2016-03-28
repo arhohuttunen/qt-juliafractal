@@ -15,6 +15,7 @@ class JuliaFractal : public QObject
     Q_PROPERTY(float zoom READ zoom WRITE setZoom)
     Q_PROPERTY(QVector2D pan READ pan WRITE setPan)
     Q_PROPERTY(QVector2D seed READ seed WRITE setSeed)
+    Q_PROPERTY(float angle READ angle WRITE setAngle)
 
 public:
     JuliaFractal(QObject *parent = 0);
@@ -24,11 +25,13 @@ public:
     float zoom() const;
     QVector2D pan() const;
     QVector2D seed() const;
+    float angle() const;
 
     void setAspect(float aspect);
     void setZoom(float zoom);
     void setPan(const QVector2D &pan);
     void setSeed(const QVector2D &seed);
+    void setAngle(const float angle);
 
     void render();
 
@@ -39,6 +42,7 @@ private:
     float m_zoom;
     QVector2D m_pan;
     QVector2D m_seed;
+    float m_angle;
     QGLShaderProgram *m_program;
 
     void setupGeometry();

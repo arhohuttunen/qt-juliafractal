@@ -32,6 +32,11 @@ QVector2D JuliaFractal::seed() const
     return m_seed;
 }
 
+float JuliaFractal::angle() const
+{
+    return m_angle;
+}
+
 void JuliaFractal::setAspect(float aspect)
 {
     m_aspect = aspect;
@@ -52,6 +57,11 @@ void JuliaFractal::setSeed(const QVector2D &seed)
     m_seed = seed;
 }
 
+void JuliaFractal::setAngle(float angle)
+{
+    m_angle = angle;
+}
+
 void JuliaFractal::render()
 {
     glClearColor(0.0, 0.0, 0.0, 0.0);
@@ -69,6 +79,7 @@ void JuliaFractal::render()
     m_program->setUniformValue("zoom", m_zoom);
     m_program->setUniformValue("pan", m_pan);
     m_program->setUniformValue("seed", m_seed);
+    m_program->setUniformValue("angle", m_angle);
 
     glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
 }

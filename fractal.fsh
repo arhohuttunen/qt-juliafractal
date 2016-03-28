@@ -6,9 +6,11 @@ uniform mediump float aspect;
 uniform mediump float zoom;
 uniform mediump vec2 pan;
 uniform mediump vec2 seed;
+uniform mediump float angle;
 
 float computeValue(vec2 v, vec2 offset)
 {
+    v = vec2(cos(angle) * v.x - sin(angle) * v.y, sin(angle) * v.x + cos(angle) * v.y);
     int iterations = 128;
     float vxsquare = 0.0;
     float vysquare = 0.0;

@@ -79,13 +79,13 @@ QAbstractAnimation * FractalWidget::createZoomingAnimation()
     QPropertyAnimation *third = new QPropertyAnimation(m_fractal, "zoom");
     third->setEasingCurve(QEasingCurve::InOutCubic);
     third->setStartValue(3.0f);
-    third->setEndValue(0.2f);
+    third->setEndValue(0.1f);
     third->setDuration(10000);
     zoomAnimation->addAnimation(third);
 
     QPropertyAnimation *fourth = new QPropertyAnimation(m_fractal, "zoom");
     fourth->setEasingCurve(QEasingCurve::InOutCubic);
-    fourth->setStartValue(0.2f);
+    fourth->setStartValue(0.1f);
     fourth->setEndValue(3.0f);
     fourth->setDuration(10000);
     zoomAnimation->addAnimation(fourth);
@@ -138,31 +138,24 @@ QAbstractAnimation * FractalWidget::createPanningAnimation()
 
     QPropertyAnimation *first = new QPropertyAnimation(m_fractal, "pan");
     first->setEasingCurve(QEasingCurve::InOutSine);
-    first->setStartValue(QVector2D(-0.1, -0.1));
-    first->setEndValue(QVector2D(-0.05, -0.05));
-    first->setDuration(10000);
+    first->setStartValue(QVector2D(0.0, 0.0));
+    first->setEndValue(QVector2D(-0.1, -0.05));
+    first->setDuration(20000);
     panAnimation->addAnimation(first);
 
     QPropertyAnimation *second = new QPropertyAnimation(m_fractal, "pan");
     second->setEasingCurve(QEasingCurve::InOutSine);
-    second->setStartValue(QVector2D(-0.05, -0.05));
-    second->setEndValue(QVector2D(0.0, 0.0));
+    second->setStartValue(QVector2D(-0.1, -0.05));
+    second->setEndValue(QVector2D(-0.3, 0.38));
     second->setDuration(10000);
     panAnimation->addAnimation(second);
 
     QPropertyAnimation *third = new QPropertyAnimation(m_fractal, "pan");
     third->setEasingCurve(QEasingCurve::InOutSine);
-    third->setStartValue(QVector2D(0.0, 0.0));
-    third->setEndValue(QVector2D(-0.3, 0.45));
+    third->setStartValue(QVector2D(-0.3, 0.38));
+    third->setEndValue(QVector2D(0.0, 0.0));
     third->setDuration(10000);
     panAnimation->addAnimation(third);
-
-    QPropertyAnimation *fourth = new QPropertyAnimation(m_fractal, "pan");
-    fourth->setEasingCurve(QEasingCurve::InOutSine);
-    fourth->setStartValue(QVector2D(-0.3, 0.45));
-    fourth->setEndValue(QVector2D(-0.1, -0.1));
-    fourth->setDuration(10000);
-    panAnimation->addAnimation(fourth);
 
     panAnimation->setLoopCount(-1);
 
@@ -175,21 +168,21 @@ QAbstractAnimation * FractalWidget::createRotatingAnimation()
 
     QPropertyAnimation *first = new QPropertyAnimation(m_fractal, "angle");
     first->setEasingCurve(QEasingCurve::InOutBack);
-    first->setStartValue(M_PI);
-    first->setEndValue(0.0);
+    first->setStartValue(M_PI * 1.5);
+    first->setEndValue(M_PI);
     first->setDuration(10000);
     animation->addAnimation(first);
 
     QPropertyAnimation *second = new QPropertyAnimation(m_fractal, "angle");
     second->setEasingCurve(QEasingCurve::InOutBack);
-    second->setStartValue(0.0);
-    second->setEndValue(-M_PI);
+    second->setStartValue(M_PI);
+    second->setEndValue(0.0);
     second->setDuration(10000);
     animation->addAnimation(second);
 
     QPropertyAnimation *third = new QPropertyAnimation(m_fractal, "angle");
     third->setEasingCurve(QEasingCurve::InOutBack);
-    third->setStartValue(-M_PI);
+    third->setStartValue(0.0);
     third->setEndValue(M_PI * 0.5);
     third->setDuration(10000);
     animation->addAnimation(third);
@@ -197,7 +190,7 @@ QAbstractAnimation * FractalWidget::createRotatingAnimation()
     QPropertyAnimation *fourth = new QPropertyAnimation(m_fractal, "angle");
     fourth->setEasingCurve(QEasingCurve::InOutBack);
     fourth->setStartValue(M_PI * 0.5);
-    fourth->setEndValue(M_PI);
+    fourth->setEndValue(M_PI * 1.5);
     fourth->setDuration(10000);
     animation->addAnimation(fourth);
 

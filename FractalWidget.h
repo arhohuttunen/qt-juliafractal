@@ -31,6 +31,7 @@ private:
     QAbstractAnimation * createZoomingAnimation();
     QAbstractAnimation * createSeedAnimation();
     QAbstractAnimation * createPanningAnimation();
+    QAbstractAnimation * createRotatingAnimation();
 
     JuliaFractal *m_fractal;
     QTimeLine *m_timer;

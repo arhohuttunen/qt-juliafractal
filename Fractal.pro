@@ -1,13 +1,12 @@
 QT += opengl
+QT += multimedia
 HEADERS += \
     FractalWidget.h \
-    JuliaFractal.h \
-    OscillatingAnimation.h
+    JuliaFractal.h
 SOURCES += \
     main.cpp \
     JuliaFractal.cpp \
-    FractalWidget.cpp \
-    OscillatingAnimation.cpp
+    FractalWidget.cpp
 OTHER_FILES += fractal.vsh \
     fractal.fsh
 RESOURCES += Fractal.qrc
